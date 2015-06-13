@@ -1,7 +1,10 @@
 {
   "name": "bourbonify-jekyll",
   "version": "1.0.0",
-  "authors": "Andrzej Kłapeć",
+  "directory": "bower_components",
+  "authors": [
+    "Andrzej Kłapeć"
+  ],
   "description": "Simple boilerplate for quickly setting up Jekyll with Normalize, Bourbon and Neat.",
   "license": "MIT",
   "homepage": "http://github.com/klapec/jekyll-bourbonify",

@@ -3,12 +3,17 @@ body {
 }
 .row {
 	@include outer-container;
+	padding:0 20px;
 	margin: 200px 0;
-	margin-left:-90px;
+	// margin-left:-90px;
+	&.nm {
+		margin-top:0px !important;
+		margin-bottom:0px;
+	}
 }
 .ls {
 	@include span-columns(2);
-
+	@include shift(-1);
 	h3 {
 		font-size: rem(14px);
 		letter-spacing:2px;
@@ -22,17 +27,21 @@ body {
 		@include span-columns(2 of 6);
 	}
 }
-
+.intro {
+	padding:343px 0 400px;
+}
 .main-title {
-	font-size: rem(70px);
+	font-size: rem(75px);
 	font-weight:100;
-	letter-spacing:-1px; 
+	letter-spacing:-1px;
 	line-height:80px;
+	font-family: "Calibre";
 	width: 100%;
+
 	margin-top:-20px;
 }
 .dribbble-shots {
-	li { 
+	li {
 		@include span-columns(6);
 		@include omega(2n);
 		margin:0px !important;
@@ -40,7 +49,6 @@ body {
 		img {
 			max-width:100%;
 			width:100%;
-			opacity:0.5;
 			filter: grayscale(100%);
 			@include transition(all .3s ease-in-out);
 		}

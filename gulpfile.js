@@ -17,7 +17,8 @@ var srcAssets = {
   scripts       : basePath.src + 'scripts/',
   vendorScripts : basePath.src + 'scripts/vendors/',
   images        : basePath.src + 'images/',
-  svg           : basePath.src + 'svg/'
+  svg           : basePath.src + 'svg/',
+  fonts         : basePath.src + 'fonts/'
 };
 
 var distAssets = {
@@ -25,7 +26,8 @@ var distAssets = {
   scripts       : basePath.dist + 'scripts/',
   vendorScripts : basePath.dist + 'scripts/',
   images        : basePath.dist + 'images/',
-  svg           : basePath.dist + 'svg/'
+  svg           : basePath.dist + 'svg/',
+  fonts         : basePath.dist + 'fonts/'
 };
 
 function errorAlert(err) {
@@ -58,7 +60,7 @@ gulp.task('depsDownload', function() {
 });
 
 gulp.task('depsInstall', ['depsDownload'] ,function() {
-  var stream = gulp.src('bower_components/**/*')
+  var stream = gulp.src('app/_bower_components/**/*')
     .pipe($.plumber({errorHandler: errorAlert}))
     .pipe(gulp.dest(srcAssets.styles + 'vendors'))
     return stream;
@@ -93,6 +95,7 @@ gulp.task('default', function() {
   gulp.watch(srcAssets.styles + '**/*', ['injectStyles']);
   gulp.watch(srcAssets.scripts + '*', ['injectScripts']);
   gulp.watch(srcAssets.vendorScripts + '**/*', ['injectVendorScripts']);
+  gulp.watch(srcAssets + '**/*.html', [browserSync.reload]);
   gulp.watch(srcAssets.images + '**/*', ['images', browserSync.reload]);
   gulp.watch(srcAssets.svg + '**/*', ['svg', browserSync.reload]);
 });
@@ -181,7 +184,17 @@ gulp.task('svg', function() {
         sound: "Glass"
     }));
 });
-
+gulp.task('fonts', function() {
+  return gulp.src(srcAssets.fonts + '*')
+    .pipe($.plumber({errorHandler: errorAlert}))
+    .pipe($.changed(distAssets.fonts))
+    .pipe(gulp.dest(distAssets.fonts))
+    .pipe($.notify({
+        title: "Fonts optimized",
+        message: "<%= file.relative %>",
+        sound: "Glass"
+    }));
+});
 gulp.task('cleanAssets', ['cleanStyles', 'cleanScripts', 'cleanVendorScripts']);
 
 gulp.task('cleanStyles', function () {
@@ -193,7 +206,7 @@ gulp.task('cleanScripts', function () {
 });
 
 gulp.task('cleanVendorScripts', function () {
-  return del('assets/dist/scripts/vendors*', { read: false });
+  return del('assets/dist/scripts/vendors/*', { read: false });
 });
 
 gulp.task('injectStyles', ['styles'], function () {

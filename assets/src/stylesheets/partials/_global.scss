@@ -1,6 +1,6 @@
 .wrapper {
   @include outer-container();
-  padding-top: rem(60px);
+  // padding-top: rem(60px);
 
   @include media ($small) {
     padding-top: rem(30px);
@@ -23,7 +23,7 @@
 	fill: $base-font-color;
 }
 .container {
-	
+
 }
 
 .l-link {
