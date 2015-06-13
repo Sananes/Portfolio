@@ -1,0 +1,33 @@
+.wrapper {
+  @include outer-container();
+  padding-top: rem(60px);
+
+  @include media ($small) {
+    padding-top: rem(30px);
+    width:100%;
+  }
+}
+
+.page-content {
+  @include span-columns(12);
+  @include omega();
+  padding-top: $gutter;
+
+  h1 {
+    line-height: 1em;
+  }
+}
+.logo {
+	width:136px;
+	height:100px;
+	fill: $base-font-color;
+}
+.container {
+	
+}
+
+.l-link {
+	font-size: rem(32px);
+	font-weight:bold;
+	display:block;
+}

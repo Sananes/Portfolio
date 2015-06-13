@@ -1,0 +1,54 @@
+body {
+	background: url('../images/sananes.png') fixed no-repeat bottom right;
+}
+.row {
+	@include outer-container;
+	margin: 200px 0;
+	margin-left:-90px;
+}
+.ls {
+	@include span-columns(2);
+
+	h3 {
+		font-size: rem(14px);
+		letter-spacing:2px;
+		text-transform:uppercase;
+	}
+}
+.rs {
+	@include span-columns(10);
+
+	.block {
+		@include span-columns(2 of 6);
+	}
+}
+
+.main-title {
+	font-size: rem(70px);
+	font-weight:100;
+	letter-spacing:-1px; 
+	line-height:80px;
+	width: 100%;
+	margin-top:-20px;
+}
+.dribbble-shots {
+	li { 
+		@include span-columns(6);
+		@include omega(2n);
+		margin:0px !important;
+
+		img {
+			max-width:100%;
+			width:100%;
+			opacity:0.5;
+			filter: grayscale(100%);
+			@include transition(all .3s ease-in-out);
+		}
+
+		a:hover img {
+			filter: grayscale(0%);
+			opacity:1;
+		}
+	}
+
+}

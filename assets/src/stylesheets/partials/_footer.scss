@@ -1,0 +1,39 @@
+.site-footer {
+  @include span-columns(12);
+  @include omega();
+  border-top: 1px solid $light-gray;
+  color: $medium-gray;
+  font-size: 15px;
+  padding-top: $gutter;
+
+  div {
+    overflow: hidden;
+  }
+}
+
+.footer-heading {
+  font-size: 18px;
+  margin-bottom: $gutter / 2;
+}
+
+.footer-details-site {
+  @include span-columns(4 of 12);
+  @include media($small) {
+    @include span-columns(4)
+  }
+}
+
+.footer-details-social {
+  @include span-columns(4 of 12);
+  @include pad();
+  @include media($small) {
+    @include span-columns(4)
+  }
+}
+
+.footer-details-description {
+  @include span-columns(4 of 12);
+  @include media($small) {
+    @include span-columns(4)
+  }
+}

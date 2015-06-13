@@ -1,0 +1,72 @@
+// GRID SETTINGS
+// Uncomment to change the Neat defaults
+
+// $column:  // Column width, default: golden-ratio(1em, 3);
+// $gutter:  // Gutter between each two columns, default: golden-ratio(1em, 1);
+// $grid-columns:  // Total number of columns in the grid, default: 12;
+// $max-width:  // Max-width of the outer container, default: em(1088);
+// $border-box-sizing:  // Makes all elements have a border-box layout, default: true;
+// $default-feature:  // Default @media feature for the breakpoint() mixin, default: min-width;
+// $default-layout-direction:  // Left-to-right or Right-to-left layout direction, default: LTR;
+
+$small: new-breakpoint(max-width 768px 4);
+$medium: new-breakpoint(min-width 768px 8);
+$large: new-breakpoint(min-breakpoint 1024px 12);
+
+$visual-grid: true !default;
+$visual-grid-color: red;
+$visual-grid-index:  front;
+$visual-grid-opacity:  1;
+// $visual-grid-breakpoints: ();
+
+
+
+// COLORS
+$blue: #477DCA;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ADADAD;
+$verylight-gray: #E5E5E5;
+
+// Background Color
+$base-background-color: white;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $blue;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Border color
+$base-border-color: $light-gray;
+
+
+
+// SIZES
+$base-font-size: 1em;
+$base-line-height: $base-font-size * 1.5;
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1);
+$header-line-height: $base-font-size * 1.25;
+
+
+// -------------------------------------------------------------------
+// Omega Reset for Bourbon Neat
+//
+// http://joshfry.me/notes/omega-reset-for-bourbon-neat
+// -------------------------------------------------------------------
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ site.title }} - {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{% if page.title %}{{ site.title }} - {{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <meta property="og:image" content="{{ site.baseurl }}/favicon-192x192.png">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/dist/stylesheets/main-b1ddaaf9.min.css">
+    <!-- endinject -->
+    <link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon-192x192.png" sizes="192x192">
+    <script src="//use.typekit.net/uft5vrr.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+<body>
+
+    {% include header.html %}
+      {{ content }}
+<!--     {% include footer.html %} -->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <!-- <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+  </script> -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <!-- vendorScripts:js -->
+  <script src="{{ site.baseurl }}/assets/dist/scripts/vendors-e80cde67.min.js"></script>
+  <!-- endinject -->
+  <!-- script:js -->
+  <script src="{{ site.baseurl }}/assets/dist/scripts/main-d6510c8a.min.js"></script>
+  <!-- endinject -->
+</body>
+</html>

@@ -1,0 +1,122 @@
+#mast {
+	@include outer-container();
+	@include span-columns(10);
+	@include shift(1);
+	margin-bottom: 100px;
+
+	.hero-wrapper {
+		padding-top: rem(80px);
+	}
+	.left-side {
+		@include span-columns(6);
+	}
+	.right-side {
+		text-align:right;
+	}
+	.hero-title {
+		font-size: rem(112px);
+		font-weight:bold;
+		line-height: 90px;
+		display:block;
+		letter-spacing: -2px;
+	}
+	.view-work {
+		padding-top: rem(60px);
+	}
+
+	.contact {
+		@include span-columns(6);
+		margin-top:rem(20px);
+		float:right;
+		width:auto;
+		ul {
+			text-align:left;
+			li.email {
+				font-size: rem(32px);
+				font-weight:bold;
+			}
+			li.phone { margin-bottom: rem(20px); }
+			li.address { color: $light-gray; }
+		}
+	}
+}
+
+.view-work {
+	font-size: rem(32px);
+	font-weight:bold;
+	display:block;
+}
+
+#work, #project {
+	.number {
+		font-size: rem(80px);
+		font-weight:bold;
+		float:left;
+		border-top: 2px solid #E5E5E5;
+		color: #E5E5E5;
+		margin-top: rem(5px);
+		width:100px;
+	}
+	.content {
+		margin-left: 120px;
+	}
+}
+#work {
+	@include outer-container;
+	width:100%;
+	background:#ddd;
+	height:500px;
+	clear:both;
+
+	.container {
+		@include span-columns(4);
+		@include shift(3);
+	}
+
+
+
+}
+
+#project {
+	@include outer-container;
+	margin-top: rem(80px);
+
+	.project-details {
+		margin-top: rem(20px);
+		@include span-columns(4);
+		@include shift(1);
+
+		p {
+			color: $light-gray;
+		}
+	}
+	&.a-right {
+		.project-details {
+			@include shift(7);
+		}
+		img {
+			@include shift(-11);
+		}
+	}
+	.number {
+		width:100px;
+	}
+	img {
+		@include span-columns(6);
+		@include shift(1);
+	}
+}
+
+#footer {
+	@include outer-container;
+	margin-top: rem(80px);
+	margin-bottom: rem(80px);
+
+	.container {
+		@include span-columns(12);
+		@include shift(2);
+	}
+	.address, .contact {
+		@include span-columns(5);
+	}
+}

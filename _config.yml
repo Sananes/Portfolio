@@ -1,0 +1,26 @@
+title: "Aaron Sananes - Senior Product Designer"
+author: "Aaron Sananes"
+email: hello@sidian.co
+keywords: "comma, separated, keywords"
+description: "Digital design studio based in Manchester, UK."
+
+# portfolio_root: /projects
+# portfolio_path: /media/wern/Files/files/octopress/source/images/pages/projects
+# portfolio_img_root: /assets/dist/images/projects
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://localhost:3000" # the base hostname & protocol for your site
+
+markdown: kramdown
+redcarpet:
+  extensions: ["smart", "autolink", "tables", "no_intra_emphasis", "strikethrough", "underline", "quote", "footnotes"]
+
+exclude: ['assets/src', 'node_modules', 'package.json', 'gulpfile.js', 'LICENSE', 'README.md', 'bourbonify-jekyll.sublime-project', 'bower_components', 'bower.json']
+
+timezone: Europe/London
+
+collections:
+  projects:
+    output: true
+
+permalink: none
