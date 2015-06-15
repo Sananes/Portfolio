@@ -185,7 +185,7 @@ gulp.task('svg', function() {
     }));
 });
 gulp.task('fonts', function() {
-  return gulp.src(srcAssets.fonts + '*')
+  return gulp.src(srcAssets.fonts + '**')
     .pipe($.plumber({errorHandler: errorAlert}))
     .pipe($.changed(distAssets.fonts))
     .pipe(gulp.dest(distAssets.fonts))

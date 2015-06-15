@@ -4,7 +4,7 @@
 // $column:  // Column width, default: golden-ratio(1em, 3);
 // $gutter:  // Gutter between each two columns, default: golden-ratio(1em, 1);
 // $grid-columns:  // Total number of columns in the grid, default: 12;
-// $max-width:  // Max-width of the outer container, default: em(1088);
+$max-width: em(1140);   // Max-width of the outer container, default: em(1088);
 // $border-box-sizing:  // Makes all elements have a border-box layout, default: true;
 // $default-feature:  // Default @media feature for the breakpoint() mixin, default: min-width;
 // $default-layout-direction:  // Left-to-right or Right-to-left layout direction, default: LTR;

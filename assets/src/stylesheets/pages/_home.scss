@@ -1,9 +1,9 @@
 body {
-	background: url('../images/sananes.png') fixed no-repeat bottom right;
+	background: url("../images/sananes.png") fixed no-repeat bottom right;
 }
 .row {
 	@include outer-container;
-	padding:0 20px;
+	// padding:0 20px;
 	margin: 200px 0;
 	// margin-left:-90px;
 	&.nm {
@@ -18,27 +18,28 @@ body {
 		font-size: rem(14px);
 		letter-spacing:2px;
 		text-transform:uppercase;
+		color: $light-gray;
 	}
 }
 .rs {
 	@include span-columns(10);
+	margin-top: -5px;
 
 	.block {
-		@include span-columns(2 of 6);
+		@include span-columns(4);
 	}
 }
 .intro {
 	padding:343px 0 400px;
 }
 .main-title {
-	font-size: rem(75px);
+	font-size: rem(80px);
 	font-weight:100;
 	letter-spacing:-1px;
 	line-height:80px;
 	font-family: "Calibre";
 	width: 100%;
-
-	margin-top:-20px;
+	margin-top:0px;
 }
 .dribbble-shots {
 	li {
@@ -59,4 +60,13 @@ body {
 		}
 	}
 
+}
+
+.contact {
+	.rs {
+		// @include span-columns(12);
+	}
+	.blurb {
+		@include span-columns(4);
+	}
 }
