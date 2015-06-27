@@ -49,7 +49,7 @@ gulp.task('deps', ['cleanDeps', 'depsDownload', 'depsInstall', 'depsFix'], funct
 });
 
 gulp.task('cleanDeps', function () {
-  return del(['assets/src/stylesheets/vendors/*', 'assets/src/scripts/vendors/*', 'bower_components'], { read: false });
+  return del(['bower_components'], { read: false });
 });
 
 gulp.task('depsDownload', function() {
@@ -60,7 +60,7 @@ gulp.task('depsDownload', function() {
 });
 
 gulp.task('depsInstall', ['depsDownload'] ,function() {
-  var stream = gulp.src('app/_bower_components/**/*')
+  var stream = gulp.src('bower_components/**/*')
     .pipe($.plumber({errorHandler: errorAlert}))
     .pipe(gulp.dest(srcAssets.styles + 'vendors'))
     return stream;

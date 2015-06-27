@@ -1,7 +1,7 @@
 {
   "name": "bourbonify-jekyll",
   "version": "1.0.0",
-  "directory": "bower_components",
+  "directory": "app/_bower_components",
   "authors": [
     "Andrzej Kłapeć"
   ],

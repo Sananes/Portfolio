@@ -1,24 +1,56 @@
 body {
 	background: url("../images/sananes.png") fixed no-repeat bottom right;
+
+	@include media($small) {
+		background:none;
+	}
 }
+
 .row {
 	@include outer-container;
-	// padding:0 20px;
 	margin: 200px 0;
+
 	// margin-left:-90px;
 	&.nm {
 		margin-top:0px !important;
 		margin-bottom:0px;
 	}
+
+	@include media($small) {
+		padding-left: 50px;
+		padding-right:50px;
+		margin: 50px 0;
+	}
+
+	@include media($large) {
+		padding-left: 50px;
+		padding-right:50px;
+	}
 }
 .ls {
 	@include span-columns(2);
-	@include shift(-1);
+	// @include shift(-1);
+
 	h3 {
 		font-size: rem(14px);
 		letter-spacing:2px;
 		text-transform:uppercase;
 		color: $light-gray;
+	}
+
+
+	@include media($small) {
+		 @include fill-parent();
+		 margin-left:0px;
+		 margin-right:0px;
+
+		 h3 {
+		 	margin-bottom:30px;
+		 }
+	}
+
+	@include media($large) {
+		@include shift(0);
 	}
 }
 .rs {
@@ -28,18 +60,55 @@ body {
 	.block {
 		@include span-columns(4);
 	}
+	@include media($small) {
+		width:100%;
+
+		.block {
+			width:100%;
+		}
+	}
 }
 .intro {
 	padding:343px 0 400px;
-}
-.main-title {
-	font-size: rem(80px);
-	font-weight:100;
-	letter-spacing:-1px;
-	line-height:80px;
-	font-family: "Calibre";
-	width: 100%;
-	margin-top:0px;
+
+	.social {
+		margin-top:30px;
+		li {
+			display:inline-block;
+			padding-right: 20px;
+			text-transform:uppercase;
+			letter-spacing:2px;
+			font-size: rem(12px);
+		}
+	}
+	.main-title {
+		font-size: rem(80px);
+		font-weight:100;
+		letter-spacing:-1px;
+		line-height:80px;
+		font-family: "Calibre";
+		width: 100%;
+		margin-top:0px;
+	}
+	@include media($small) {
+
+		padding: 50px 0;
+
+		.ls {
+			margin-bottom: 50px;
+		}
+
+		.main-title {
+			font-size: rem(50px);
+			line-height:50px;
+
+			br {
+				display:none;
+			}
+		}
+	}
+
+	
 }
 .dribbble-shots {
 	li {

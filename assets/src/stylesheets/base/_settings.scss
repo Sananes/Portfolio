@@ -11,7 +11,7 @@ $max-width: em(1140);   // Max-width of the outer container, default: em(1088);
 
 $small: new-breakpoint(max-width 768px 4);
 $medium: new-breakpoint(min-width 768px 8);
-$large: new-breakpoint(min-breakpoint 1024px 12);
+$large: new-breakpoint(max-width 1340px 12);
 
 $visual-grid: true !default;
 $visual-grid-color: red;
